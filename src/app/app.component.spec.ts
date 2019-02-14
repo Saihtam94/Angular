@@ -1,15 +1,29 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { VideoComponent } from "./video/video.component";
+import { ChaptersComponent } from "./chapters/chapters.component";
+import { HttpClientModule } from '@angular/common/http';
+import {MatMenuModule} from '@angular/material/menu';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientModule,
+        MatMenuModule,
+        BrowserAnimationsModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        VideoComponent,
+        ChaptersComponent
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
       ],
     }).compileComponents();
   }));
