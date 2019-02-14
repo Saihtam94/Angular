@@ -15,10 +15,11 @@ export class VideoComponent implements OnInit {
   time = 0;
   messages: Subscription;
   constructor(private service:UnServiceService) { }
-
+/*
   onTimeUpdate(player) {
       console.log(player.currentTime)
   }
+  */
   ngOnInit() {
       this.messages = this.service.messages.subscribe(message => {
           this.time = message

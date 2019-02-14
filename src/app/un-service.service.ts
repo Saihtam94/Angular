@@ -6,17 +6,12 @@ import { Subject } from 'rxjs/Subject';
 })
 export class UnServiceService {
 
-    private channelVideo = new Subject<number>();
-    messages = this.channelVideo.asObservable();
-
-    private channelMap = new Subject<number>();
+    private channel = new Subject<number>();
+    messages = this.channel.asObservable();
 
     constructor() { }
 
-    postToVideo(message:number) {
-        this.channelVideo.next(message)
-    }
-    postToMap(message:number) {
-        this.channelMap.next(message)
+    post(message:number) {
+        this.channel.next(message)
     }
 }

@@ -18,7 +18,6 @@ export class ChaptersComponent implements OnInit {
 
   ngOnInit() {
       this.http.get('./assets/chapters.json', {responseType:'json'}).subscribe(data => {
-          console.log(data['Chapters']);
           this.chapters = data['Chapters'];
       });
       this.messages = this.service.messages.subscribe(message => {
@@ -27,7 +26,8 @@ export class ChaptersComponent implements OnInit {
   }
 
   onSelect(chapter){
-      this.service.postToVideo(parseInt(chapter.pos))
+      console.log(parseInt(chapter.pos))
+      this.service.post(parseInt(chapter.pos))
       //this.messages.unsubscribe()
   }
 

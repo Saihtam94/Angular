@@ -14,6 +14,8 @@ export class MapsComponent implements OnInit {
 
   lat: number;
   lng: number;
+  latitude: number;
+  longitude: number;
   zoom:4;
   waypoints: waypoint[] = []// retains the list of waypoints
   messages: Subscription;
@@ -22,18 +24,27 @@ export class MapsComponent implements OnInit {
   ngOnInit() {
       this.http.get('./assets/chapters.json', {responseType:'json'}).subscribe(data => {
           data['Waypoints'].map(
-              waypoint => this.waypoints.push({
-                  lat: Number(waypoint.lat),
-                  lng: Number(waypoint.lng),
-                  label: String(waypoint.label),
-                  timestamp: Number(waypoint.timestamp)
-              })
+              waypoint => {
+                  this.waypoints.push({
+                      lat: Number(waypoint.lat),
+                      lng: Number(waypoint.lng),
+                      label: String(waypoint.label),
+                      timestamp: Number(waypoint.timestamp)
+              });
+            }
           )
           this.lat = this.waypoints[0].lat;
           this.lng = this.waypoints[0].lng;
       });
       this.messages = this.service.messages.subscribe(message => {
-          //console.log(message)
+          const foundWaypoint = this.waypoints.find(function (waypoint, index, array){
+              if(index < array.length - 1){
+                  return (message >= waypoint.timestamp && message < array[index+1].timestamp);
+              }else{return true;}
+              return waypoint.timestamp == message;
+          });
+          this.latitude = foundWaypoint.lat;
+          this.longitude = foundWaypoint.lng;
       });
   }
 
