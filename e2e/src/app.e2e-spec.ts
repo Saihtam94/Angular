@@ -13,6 +13,12 @@ describe('workspace-project App', () => {
     expect(page.getTitleText()).toEqual('Welcome to angular-road66!');
   });
 
+  it('should set video duration to 970', () => {
+    page.getChapterButton('chapters').click();
+    page.getChapterButton('White House').click();
+    expect(page.getVideoDuration()).toEqual('970');
+  });
+
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
