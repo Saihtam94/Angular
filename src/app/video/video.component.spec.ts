@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VideoComponent } from './video.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('VideoComponent', () => {
   let component: VideoComponent;
@@ -8,7 +9,10 @@ describe('VideoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VideoComponent ]
+      declarations: [ VideoComponent ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
     .compileComponents();
   }));

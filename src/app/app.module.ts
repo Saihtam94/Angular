@@ -8,8 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VideoComponent } from './video/video.component';
 import { ChaptersComponent } from './chapters/chapters.component';
-import {MatMenuModule} from '@angular/material/menu';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapsComponent } from './maps/maps.component';
 import { UnComponent } from './un/un.component';
 
@@ -31,7 +31,7 @@ import { UnComponent } from './un/un.component';
         apiKey: 'AIzaSyD-qynSX_mZ-xrTxj7vut33VD9NImfHxmw'
     })
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

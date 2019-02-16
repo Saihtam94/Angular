@@ -2,8 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChaptersComponent } from './chapters.component';
 import { HttpClientModule } from '@angular/common/http';
-import {MatMenuModule} from '@angular/material/menu';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatMenuModule } from '@angular/material/menu';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 describe('ChaptersComponent', () => {
@@ -17,7 +18,10 @@ describe('ChaptersComponent', () => {
         MatMenuModule,
         BrowserAnimationsModule
       ],
-      declarations: [ ChaptersComponent ]
+      declarations: [ ChaptersComponent ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
     .compileComponents();
   }));
