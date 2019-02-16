@@ -26,9 +26,7 @@ export class ChaptersComponent implements OnInit {
   }
 
   onSelect(chapter){
-      console.log(parseInt(chapter.pos))
       this.service.post(parseInt(chapter.pos))
-      //this.messages.unsubscribe()
   }
 
 }

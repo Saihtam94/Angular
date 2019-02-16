@@ -1,5 +1,11 @@
-<agm-map [latitude]="latitude" [longitude]="longitude">
+<!-- <agm-map [latitude]="latitude" [longitude]="longitude">
     <agm-marker *ngFor="let waypoint of waypoints" [latitude]="waypoint.lat" [longitude]="waypoint.lng" draggable=false>
         <agm-info-window>{{waypoint.label}}</agm-info-window>
     </agm-marker>
 </agm-map>
+ -->
+
+<div id="angularmap" style="height: 300px;">
+</div>
+<p id="map_latitude" hidden>{{ latitude }}</p>
+<p id="map_longitude" hidden>{{ longitude }}</p>
