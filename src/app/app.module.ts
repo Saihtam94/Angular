@@ -11,25 +11,21 @@ import { ChaptersComponent } from './chapters/chapters.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapsComponent } from './maps/maps.component';
-import { UnComponent } from './un/un.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VideoComponent,
     ChaptersComponent,
-    MapsComponent,
-    UnComponent
+    MapsComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     MatMenuModule,
-    BrowserAnimationsModule,
-    AgmCoreModule.forRoot({
-        apiKey: 'AIzaSyD-qynSX_mZ-xrTxj7vut33VD9NImfHxmw'
-    })
+    BrowserAnimationsModule
+    //AgmCoreModule.forRoot({})
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

@@ -28,6 +28,8 @@ describe('workspace-project App', () => {
     expect(page.getVideoDuration()).toEqual('970');
   });
 
+  
+// Test doesn't work
   it('should set map location to 34.09, -118.33', () => {
     page.navigateTo();
     page.getChapterButton('chapters').click();
